@@ -4,7 +4,7 @@
 
 <h2 align="center">Amazon Simple Notification Service</h2>
 <p align="center">Amazon SNS é um web service que coordena e gerencia a entrega ou o envio de mensagens para endpoints ou clientes inscritos.</p>
-<hr />
+<br>
 
 ## O básico
 Baixe o [Postman do projeto](https://www.getpostman.com/collections/51742071e8fa78dd1408).  
@@ -30,6 +30,6 @@ $ npm start
 ### Dependências do projeto
 Nodejs, NPM e [AWS](http://console.aws.amazon.com/).
 
-### Link's`
+### Link's
 - [Amazon](https://aws.amazon.com/pt/?nc2=h_lg)
 - [Amazon Simple Notification Service](https://aws.amazon.com/pt/sns/)
