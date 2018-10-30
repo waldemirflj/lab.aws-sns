@@ -25,7 +25,6 @@ $ npm i
 $ npm start
 # Saída: [server.js] - Server running on http://localhost:3000
 ```
-<br>
 
 ### Dependências do projeto
 Nodejs, NPM e [AWS](http://console.aws.amazon.com/).
