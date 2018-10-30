@@ -14,6 +14,7 @@ server
 let array = []
 const env = require('./config/environments')
 const snsInit = new aws.SNS({ apiVersion: '2010-03-31' })
+const params = { Protocol: 'sms' }
 
 // Controllers
 const listarTopicos = (req, res, next) => {
@@ -69,11 +70,50 @@ const deletarTopico = (req, res, next) => {
     })
 }
 
+const meAdicionarNaLista = (req, res, next) => {
+  Object.assign(params, {
+    TopicArn: req.body.topicARN,
+    Endpoint: req.body.endpoint
+  })
+
+  const adicionar = snsInit
+    .subscribe(params)
+    .promise()
+
+  adicionar
+    .then(data => {
+      res.send(HttpStatus.CREATED, {
+        subscriptionArn: data.SubscriptionArn
+      })
+    })
+    .catch(error => {
+      console.error(`${error.stack}`)
+    })
+}
+
+const meDeletarDaLista = (req, res, next) => {
+  const deletar = snsInit
+    .unsubscribe({ SubscriptionArn: req.params.subscriptionArn })
+    .promise()
+
+  deletar
+    .then(data => {
+      res.send(HttpStatus.OK, {
+        mensagem: 'Você foi deletado da lista com sucesso.'
+      })
+    })
+    .catch(error => {
+      console.error(`${error.stack}`)
+    })
+}
+
 // Endpoints
 server.get('/', (req, res) => res.send({ mensagem:`Iniciando com AWS SNS.` }))
 server.get('/topico', listarTopicos)
 server.post('/topico', criarTopico)
 server.del('/topico/:arn', deletarTopico)
+server.post('/inscricao', meAdicionarNaLista)
+server.del('/inscricao/:subscriptionArn', meDeletarDaLista)
 
 // Server
 server.listen(env.port, () => {
