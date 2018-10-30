@@ -107,6 +107,38 @@ const meDeletarDaLista = (req, res, next) => {
     })
 }
 
+const enviarSMSTopico = (req, res, next) => {
+  const enviar = snsInit
+    .publish({ TopicArn: req.body.topicARN, Message: req.body.message })
+    .promise()
+
+  enviar
+    .then(data => {
+      res.send(HttpStatus.CREATED, {
+        messageID: data.MessageId
+      })
+    })
+    .catch(error => {
+      console.error(`${error.stack}`)
+    })
+}
+
+const enviarSMSUnico = (req, res, next) => {
+  const enviar = snsInit
+    .publish({ PhoneNumber: req.body.phoneNumber, Message: req.body.message })
+    .promise()
+
+  enviar
+    .then(data => {
+      res.send(HttpStatus.CREATED, {
+        messageID: data.MessageId
+      })
+    })
+    .catch(error => {
+      console.error(`${error.stack}`)
+    })
+}
+
 // Endpoints
 server.get('/', (req, res) => res.send({ mensagem:`Iniciando com AWS SNS.` }))
 server.get('/topico', listarTopicos)
@@ -114,6 +146,8 @@ server.post('/topico', criarTopico)
 server.del('/topico/:arn', deletarTopico)
 server.post('/inscricao', meAdicionarNaLista)
 server.del('/inscricao/:subscriptionArn', meDeletarDaLista)
+server.post('/sms/topico', enviarSMSTopico)
+server.post('/sms/unico', enviarSMSUnico)
 
 // Server
 server.listen(env.port, () => {
