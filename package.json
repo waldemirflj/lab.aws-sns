@@ -1,0 +1,29 @@
+{
+  "name": "aws-sns",
+  "version": "0.0.1",
+  "description": "Iniciando com a AWS SNS.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "./node_modules/.bin/nodemon ./server.js --config nodemon.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/waldemirflj/aws-sns.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/waldemirflj/aws-sns/issues"
+  },
+  "homepage": "https://github.com/waldemirflj/aws-sns#readme",
+  "dependencies": {
+    "aws-sdk": "^2.344.0",
+    "http-status-codes": "^1.3.0",
+    "restify": "^7.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.5"
+  }
+}
