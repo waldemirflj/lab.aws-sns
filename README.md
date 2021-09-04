@@ -1,12 +1,9 @@
-<p align="center">
-  <img src="aws-sns.png" width="200px">
-</p>
+## AWS SNS
+Lab de estudo.   
 
-<h2 align="center">Amazon Simple Notification Service</h2>
-<p align="center">Amazon SNS é um web service que coordena e gerencia a entrega ou o envio de mensagens para endpoints ou clientes inscritos.</p>
-<br>
+**Amazon SNS** é um web service que coordena e gerencia a entrega ou o envio de mensagens para endpoints ou clientes inscritos.
 
-## O básico
+## Execução
 Baixe o [Postman do projeto](https://www.getpostman.com/collections/51742071e8fa78dd1408).  
 Com o Postman do projeto em mãos e configurado siga com os demais passos.
 
@@ -26,9 +23,9 @@ $ npm start
 # Saída: [server.js] - Server running on http://localhost:3000
 ```
 
-### Dependências do projeto
-Nodejs, NPM e [AWS](http://console.aws.amazon.com/).
-
 ### Link's
-- [Amazon](https://aws.amazon.com/pt/?nc2=h_lg)
-- [Amazon Simple Notification Service](https://aws.amazon.com/pt/sns/)
+- [Amazon Simple Notification Service](https://aws.amazon.com/pt/sns/?whats-new-cards.sort-by=item.additionalFields.postDateTime&whats-new-cards.sort-order=desc)
+
+**Att**,  
+Waldemir Francisco  
+waldemirflj@gmail.com 
