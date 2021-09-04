@@ -1,4 +1,4 @@
-## AWS SNS
+## poc.aws-sns
 Lab de estudo.   
 
 **Amazon SNS** é um web service que coordena e gerencia a entrega ou o envio de mensagens para endpoints ou clientes inscritos.
