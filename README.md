@@ -3,7 +3,7 @@ Lab de estudo.
 
 **Amazon SNS** é um web service que coordena e gerencia a entrega ou o envio de mensagens para endpoints ou clientes inscritos.
 
-## Execução
+## Projeto
 Baixe o [Postman do projeto](https://www.getpostman.com/collections/51742071e8fa78dd1408).  
 Com o Postman do projeto em mãos e configurado siga com os demais passos.
 
